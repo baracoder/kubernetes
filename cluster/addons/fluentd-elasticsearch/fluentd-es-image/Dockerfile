@@ -46,7 +46,7 @@ RUN /usr/bin/curl -L https://td-toolbelt.herokuapp.com/sh/install-ubuntu-trusty-
 RUN sed -i -e "s/USER=td-agent/USER=root/" -e "s/GROUP=td-agent/GROUP=root/" /etc/init.d/td-agent
 
 # Install the Elasticsearch Fluentd plug-in.
-RUN td-agent-gem install fluent-plugin-kubernetes_metadata_filter -v 0.1.0
+RUN td-agent-gem install fluent-plugin-kubernetes_metadata_filter
 RUN td-agent-gem install fluent-plugin-elasticsearch fluent-plugin-color-stripper
 
 # Copy the Fluentd configuration file.
